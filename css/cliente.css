@@ -1,0 +1,51 @@
+.principal .metade-esquerda .cadastro-superior .cliente {
+    background-color: #f9f9f9;
+    height: 63vh;
+    width: 30vw;
+    border-right: 2px solid #907878;
+    box-sizing: border-box;
+}
+
+.cadastro-superior .cliente .row .pr_list {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+  
+  .cadastro-superior .cliente .row .pr_lis_btn {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cadastro-superior label {
+    text-transform: uppercase;
+  }
+  
+  .menu_botao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu_botao .menu_botoes_1 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu_botao .menu_botoes_1 a {
+    width: 20vw;
+  }
+  
+  .menu_botao .menu_botoes_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20vw;
+    margin-top: 1vh;
+  } 
+  
+  .menu_botao .menu_botoes_2 a {
+    width: 8vw;
+  }

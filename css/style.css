@@ -1,0 +1,78 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+a i {
+  font-weight: bold;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #907878;
+    width: 80%;
+    padding: 0.5em 0;
+}
+
+.cabecalho {
+    height: 5vh;
+    background-color: black;
+    font-size: 3vh;
+    color: whitesmoke;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.principal {
+    display: flex;
+    flex-direction: row;
+}
+
+.principal .metade-esquerda {
+    display: flex;
+    flex-direction: column;
+}
+
+.principal .metade-esquerda .cadastro-superior {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

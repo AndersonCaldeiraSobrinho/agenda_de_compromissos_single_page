@@ -1,0 +1,21 @@
+.principal .metade-esquerda .cadastro-superior .vendedor {
+    background-color: #f9f9f9;
+    height: 63vh;
+    width: 30vw;
+    border-left: 2px solid #907878;
+    box-sizing: border-box;
+}
+
+.cadastro-superior .vendedor .row .pr_list {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+  
+  .cadastro-superior .vendedor .row .pr_lis_btn {
+    display: flex;
+    flex-direction: row;
+  }
+  
+ 
