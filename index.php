@@ -716,5 +716,8 @@
 <script src="js/jQuery.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/script.js"></script>
-<script src="js/verificar.js"></script>
+<script src="js/verificarCliente.js"></script>
+<script src="js/verificarVendedor.js"></script>
+<script src="js/verificarCompr.js"></script>
+<script src="js/verificarAgenda.js"></script>
 </html>

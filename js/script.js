@@ -51,44 +51,79 @@ var cadClienteTel2 = $("#cadClienteTel2");
 
 //variaveis formulario cadastro vendedor
 
-var cadVendCod = $("#cadVendCod").val();
-var cadVendNome = $("#cadVendNome").val();
-var cadVendRG = $("#cadVendRG").val();
-var cadVendEmis = $("#cadVendEmis").val();
-var cadVendCPF = $("#cadVendCPF").val();
-var cadVendCEP = $("#cadVendCEP").val();
-var cadVendEnd = $("#cadVendEnd").val();
-var cadVendNum = $("#cadVendNum").val();
-var cadVendComp = $("#cadVendComp").val();
-var cadVendBair = $("#cadVendBair").val();
-var cadVendEst = $("#cadVendEst").val();
-var cadVendDDD1 = $("#cadVendDDD1").val();
-var cadVendTel1 = $("#cadVendTel1").val();
-var cadVendDDD2 = $("#cadVendDDD2").val();
-var cadVendTel2 = $("#cadVendTel2").val();
+var cadVendCod = $("#cadVendCod");
+var cadVendNome = $("#cadVendNome");
+var cadVendRG = $("#cadVendRG");
+var cadVendEmis = $("#cadVendEmis");
+var cadVendCPF = $("#cadVendCPF");
+var cadVendCEP = $("#cadVendCEP");
+var cadVendEnd = $("#cadVendEnd");
+var cadVendNum = $("#cadVendNum");
+var cadVendComp = $("#cadVendComp");
+var cadVendBair = $("#cadVendBair");
+var cadVendEst = $("#cadVendEst");
+var cadVendDDD1 = $("#cadVendDDD1");
+var cadVendTel1 = $("#cadVendTel1");
+var cadVendDDD2 = $("#cadVendDDD2");
+var cadVendTel2 = $("#cadVendTel2");
 
 //variaveis formulario cadastro compromisso
 
-var cadComprID = $("#cadComprID").val();
-var cadComprIdVend = $("#cadComprIdVend").val();
-var cadComprCpfCliente = $("#cadComprCpfCliente").val();
-var cadComprEvent = $("#cadComprEvent").val();
-var cadComprNomeVend = $("#cadComprNomeVend").val();
-var cadComprNomeCliente = $("#cadComprNomeCliente").val();
-var cadComprData = $("#cadComprData").val();
-var cadComprHora = $("#cadComprHora").val();
+var cadComprID = $("#cadComprID");
+var cadComprIdVend = $("#cadComprIdVend");
+var cadComprCpfCliente = $("#cadComprCpfCliente");
+var cadComprEvent = $("#cadComprEvent");
+var cadComprNomeVend = $("#cadComprNomeVend");
+var cadComprNomeCliente = $("#cadComprNomeCliente");
+var cadComprData = $("#cadComprData");
+var cadComprHora = $("#cadComprHora");
 
 //variaveis busca da agenda
 
-var buscaVendedor = $("#buscaVendedor").val();
-var buscaCliente = $("#buscaCliente").val();
+var buscaVendedor = $("#buscaVendedor");
+var buscaCliente = $("#buscaCliente");
 
 
 // chamadas das funções 
 $(function(){
+  //chamada das funções validar cliente
   clickCadCliente(btnLimpaCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteEmis, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
+
   clickCadCliente(btnBuscaCliente, cadClienteCPF);
 
+  clickCadCliente(btnCadastraCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteEmis, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
+
+  clickCadCliente(btnAlteraCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteEmis, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
+
+  clickCadCliente(btnExcluiCliente, cadClienteCPF);
+
+  //chamada das funções validar cliente
+  clickCadVendedor(btnLimpaVend, cadVendCod, cadVendCPF, cadVendNome, cadVendRG, cadVendEmis, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
+
+  clickCadVendedor(btnBuscaVend, cadVendCod);
+
+  clickCadVendedor(btnCadastraVend, cadVendCod, cadVendCPF, cadVendNome, cadVendRG, cadVendEmis, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
+
+  clickCadVendedor(btnAlteraVend, cadVendCod, cadVendCPF, cadVendNome, cadVendRG, cadVendEmis, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
+
+  clickCadVendedor(btnExcluiVend, cadVendCod);
+
+  //chamada das funções validar compromisso
+  clickCadCompr(btnLimpaCompr, idDesc, descr, idVend, nomeVend, cpfCli, nomeCli, data, hora);
+
+  clickCadCompr(btnBuscaCompr, idDesc, idVend, cpfCli);
+
+  clickCadCompr(btnCadastraCompr, idDesc, descr, idVend, nomeVend, cpfCli, nomeCli, data, hora);
+
+  clickCadCompr(btnlAlteraCompr, idDesc, descr, idVend, nomeVend, cpfCli, nomeCli, data, hora);
+
+  clickCadCompr(btnExcluiVend, idDesc, idVend, cpfCli);
+
+  //chamada das funções validar busca
+
+  clickBusca(btnbuscaVendedor, buscaVendedor);
+
+  clickBusca(btnBuscaCliente, buscaCliente);
 
 });
 
