@@ -13,7 +13,7 @@
 
 .principal .metade-direita .agenda .titulo {
     position: fixed;
-    width: 39vw;
+    width: 38.4vw;
     background-color: #f9f9f9;
     padding-bottom: 4vh;
 }
@@ -27,7 +27,7 @@
     position: fixed;
     z-index: 2;
     background-color: #f9f9f9;
-    width: 39vw;
+    width: 38.4vw;
 }
 
 .agenda .menu_busca .sub_menu_busca {
@@ -37,7 +37,7 @@
 }
 
 .agenda-compromisso {
-    padding-top: 25vh;
+    padding-top: 30vh;
 }
 
 .agenda-compromisso h3 {

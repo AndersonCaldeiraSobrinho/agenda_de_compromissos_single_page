@@ -49,3 +49,9 @@
   .menu_botao .menu_botoes_2 a {
     width: 8vw;
   }
+
+.menu_botao_cliente {
+  position: relative;
+  bottom: 1vh;
+}
+

@@ -11,6 +11,11 @@
     margin-top: 2vh;
 }
 
+.corpo_compr form {
+    position: relative;
+    bottom: 2vh;
+}
+
 .compromisso .corpo_compr .row {
     display: flex;
     flex-direction: row;
@@ -32,6 +37,8 @@
 .compromisso .corpo_compr .row .parte_3 {
     display: flex;
     flex-direction: row;
+    position: relative;
+    bottom: 2.5vh;
 }
 
 .compromisso .corpo_compr .row .parte_3_1 {
