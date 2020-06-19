@@ -1,6 +1,5 @@
 function clickBusca(btn, inp){
     btn.on("click", () => {
-
         if(isNaN(inp.val()) == true || inp.val().length<11) {
             const momentoToast = M.toast({
                 html: "Preencha corretamente o campo"

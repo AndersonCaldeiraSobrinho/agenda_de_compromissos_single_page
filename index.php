@@ -1,6 +1,6 @@
 <?php
 
-
+  
 
 ?>
 
@@ -42,51 +42,51 @@
                               <a id="btnBuscaCliente" class="col s5 waves-effect waves-light btn-small"><i class="material-icons right">search</i>Buscar</a>
                             </div>
                             <div class="input-field col s6">
-                                <input value="" type="text" id="cadClienteCPF" class="">
+                                <input tabindex="1" value="" type="text" id="cadClienteCPF" class="">
                                 <label class="active" for="cadClienteCPF" maxlength=11>cpf</label>
                             </div>
                           </div>
                             <div class="input-field s12">
                               <div class="input-field col s7">
-                                  <input value="" type="text" id="cadClienteNome" class="">
+                                  <input tabindex="2" value="" type="text" id="cadClienteNome" class="">
                                   <label class="active" for="cadClienteNome">nome completo</label>
                               </div>
                               <div class="input-field col s3">
-                                    <input value="" type="text" id="cadClienteRG" class="">
+                                    <input tabindex="3" value="" type="text" id="cadClienteRG" class="">
                                     <label class="active" for="cadClienteRG">RG</label>
                                 </div>
                                 <div class="input-field col s2">
-                                    <input value="" type="text" id="cadClienteEmis" class="">
+                                    <input tabindex="4" value="" type="text" id="cadClienteEmis" class="">
                                     <label class="active" for="cadClienteEmis">emis.</label>
                                 </div>
                             </div>
 
                             <div class="input-field s12">
                             <div class="input-field col s6">
-                                <input value="" type="text" id="cadClienteCEP" class="">
+                                <input tabindex="5" value="" type="text" id="cadClienteCEP" class="">
                                 <label class="active" for="cadClienteCEP">C.E.P.</label>
                             </div>
                             </div>
                             <div class="input-field s12">
                                 <div class="input-field col s9">
-                                    <input value="" type="text" id="cadClienteEnd" class="">
+                                    <input tabindex="6" value="" type="text" id="cadClienteEnd" class="">
                                     <label class="active input_text" for="cadClienteEnd">endereço</label>
                                 </div>
                                 <div class="input-field col s3">
-                                    <input value="" type="text" id="cadClienteNum" class="">
+                                    <input tabindex="7" value="" type="text" id="cadClienteNum" class="">
                                     <label class="active" for="cadClienteNum">num.</label>
                                 </div>
                             </div>
                             <div class="s12">
                                 <div class="input-field col s4">
-                                    <input value="" type="text" id="cadClienteComp" class="">
+                                    <input tabindex="8" value="" type="text" id="cadClienteComp" class="">
                                     <label class="active" for="cadClienteComp">Compl.</label>
                                 </div>
                                 <div class="input-field col s5">
-                                    <input value="" type="text" id="cadClienteBair" class="">
+                                    <input tabindex="9" value="" type="text" id="cadClienteBair" class="">
                                     <label class="active" for="cadClienteBair">Bairro</label>
                                 </div>
-                                <div class="input-field col s3">
+                                <div tabindex="10" class="input-field col s3">
                                 <select id="cadClienteEst">
                                     <option value="" disabled selected>Estado</option>
                                     <option value="acre">AC</option>
@@ -120,21 +120,21 @@
                             <div class="input-field row s12">
                               <div class="s6">
                               <div class="input-field col s2">
-                                  <input value="" type="text" id="cadClienteDDD1" class="">
+                                  <input tabindex="11" value="" type="text" id="cadClienteDDD1" class="">
                                   <label class="active" for="cadClienteDDD1">ddd</label>
                               </div>
                               <div class="input-field col s4">
-                                  <input value="" type="text" id="cadClienteTel1" class="">
+                                  <input tabindex="12" value="" type="text" id="cadClienteTel1" class="">
                                   <label class="active" for="cadClienteTel1">telefone</label>
                               </div>
                               </div>
                               <div class="s6">
                               <div class="input-field col s2">
-                                  <input value="" type="text" id="cadClienteDDD2" class="">
+                                  <input tabindex="13" value="" type="text" id="cadClienteDDD2" class="">
                                   <label class="active" for="cadClienteDDD2">ddd</label>
                               </div>
                               <div class="input-field col s4">
-                                  <input value="" type="text" id="cadClienteTel2" class="">
+                                  <input tabindex="14" value="" type="text" id="cadClienteTel2" class="">
                                   <label class="active" for="cadClienteTel2">celular</label>
                               </div>
                               </div>
@@ -164,55 +164,51 @@
                               <a id="btnBuscaVend" class="col s5 waves-effect waves-light btn-small"><i class="material-icons right">search</i>Buscar</a>
                             </div>
                             <div class="input-field col s6">
-                                <input value="" type="text" id="cadVendCod" class="">
-                                <label class="active" for="cadVendCod">Codigo</label>
+                                <input tabindex="15" value="" type="text" id="cadVendCPF" class="">
+                                <label class="active" for="cadVendCPF">CPF</label>
                             </div>
                           </div>
                             <div class="input-field s12">
                               <div class="input-field col s7">
-                                  <input value="" type="text" id="cadVendNome" class="">
+                                  <input tabindex="16" value="" type="text" id="cadVendNome" class="">
                                   <label class="active" for="cadVendNome">nome completo</label>
                               </div>
                               <div class="input-field col s3">
-                                    <input value="" type="text" id="cadVendRG" class="">
+                                    <input tabindex="17" value="" type="text" id="cadVendRG" class="">
                                     <label class="active" for="cadVendRG">RG</label>
                                 </div>
                                 <div class="input-field col s2">
-                                    <input value="" type="text" id="cadVendEmis" class="">
+                                    <input tabindex="18" value="" type="text" id="cadVendEmis" class="">
                                     <label class="active" for="cadVendEmis">emis.</label>
                                 </div>
                             </div>
 
                             <div class="input-field s12">
                             <div class="input-field col s6">
-                                <input value="" type="text" id="cadVendCPF" class="">
-                                <label class="active" for="cadVendCPF">CPF</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input value="" type="text" id="cadVendCEP" class="">
+                                <input tabindex="19" value="" type="text" id="cadVendCEP" class="">
                                 <label class="active" for="cadVendCEP">C.E.P.</label>
                             </div>
                             </div>
                             <div class="input-field s12">
                                 <div class="input-field col s9">
-                                    <input value="" type="text" id="cadVendEnd" class="">
+                                    <input tabindex="20" value="" type="text" id="cadVendEnd" class="">
                                     <label class="active input_text" for="cadVendEnd">endereço</label>
                                 </div>
                                 <div class="input-field col s3">
-                                    <input value="" type="text" id="cadVendNum" class="">
+                                    <input tabindex="21" value="" type="text" id="cadVendNum" class="">
                                     <label class="active" for="cadVendNum">num.</label>
                                 </div>
                             </div>
                             <div class="s12">
                                 <div class="input-field col s4">
-                                    <input value="" type="text" id="cadVendComp" class="">
+                                    <input tabindex="22" value="" type="text" id="cadVendComp" class="">
                                     <label class="active" for="cadVendComp">Compl.</label>
                                 </div>
                                 <div class="input-field col s5">
-                                    <input value="" type="text" id="cadVendBair" class="">
+                                    <input tabindex="23" value="" type="text" id="cadVendBair" class="">
                                     <label class="active" for="cadVendBair">Bairro</label>
                                 </div>
-                                <div class="input-field col s3">
+                                <div tabindex="24" class="input-field col s3">
                                 <select id="cadvendEst">
                                     <option value="" disabled selected>Estado</option>
                                     <option value="acre">AC</option>
@@ -246,21 +242,21 @@
                             <div class="input-field s12">
                               <div class="s6">
                               <div class="input-field col s2">
-                                  <input value="" type="text" id="cadVendDDD1" class="">
+                                  <input tabindex="25" value="" type="text" id="cadVendDDD1" class="">
                                   <label class="active" for="cadVendDDD1">ddd</label>
                               </div>
                               <div class="input-field col s4">
-                                  <input value="" type="text" id="cadVendTel1" class="">
+                                  <input tabindex="26" value="" type="text" id="cadVendTel1" class="">
                                   <label class="active" for="cadVendTel1">telefone</label>
                               </div>
                               </div>
                               <div class="s6">
                               <div class="input-field col s2">
-                                  <input value="" type="text" id="cadVendDDD2" class="">
+                                  <input tabindex="27" value="" type="text" id="cadVendDDD2" class="">
                                   <label class="active" for="cadVendDDD2">ddd</label>
                               </div>
                               <div class="input-field col s4">
-                                  <input value="" type="text" id="cadVendTel2" class="">
+                                  <input tabindex="28" value="" type="text" id="cadVendTel2" class="">
                                   <label class="active" for="cadVendTel2">celular</label>
                               </div>
                               </div>
@@ -289,42 +285,42 @@
                         <div class="row">
                           <div class="parte_1 input-field s3"> 
                             <div class="input-field s3">
-                              <input value="" type="text" id="cadComprID" class="">
+                              <input tabindex="29" value="" type="text" id="cadComprID" class="">
                               <label class="active" for="cadComprID">ID</label>
                             </div>
                             <div class="input-field s3">
-                              <input value="" type="text" id="cadComprIdVend" class="">
-                              <label class="active" for="cadComprIdVend">ID. Vend.</label>
+                              <input tabindex="31" value="" type="text" id="cadComprIdVend" class="">
+                              <label class="active" for="cadComprIdVend">cpf Vendedor</label>
                             </div>
                             <div class="input-field s3">
-                              <input value="" type="text" id="cadComprCpfCliente" class="">
+                              <input tabindex="33" value="" type="text" id="cadComprCpfCliente" class="">
                               <label class="active" for="cadComprCpfCliente">CPF Cliente</label>
                             </div>
                           </div>
                           
                           <div class="parte_2 input-field s6"> 
                             <div class="input-field s6">
-                              <input value="" type="text" id="cadComprEvent" class="">
+                              <input tabindex="30" value="" type="text" id="cadComprEvent" class="">
                               <label class="active" for="cadComprEvent">Descrição do evento</label>
                             </div>
                             <div class="parte_3 input-field s6">
                               <div class="parte_3_1 input-field s6">
                                 <div class="input-field s3">
-                                  <input value="" type="text" id="cadComprNomeVend" class="">
+                                  <input tabindex="32" value="" type="text" id="cadComprNomeVend" class="">
                                   <label class="active" for="cadComprNomeVend">Nome do vendedor</label>
                                 </div>
                                 <div class="input-field s3">
-                                  <input value="" type="text" id="cadComprNomeCliente" class="">
+                                  <input tabindex="34" value="" type="text" id="cadComprNomeCliente" class="">
                                   <label class="active" for="cadComprNomeCliente">Nome do Cliente</label>
                                 </div>
                               </div>
                               <div class="parte_3_2 input-field s6">
                                 <div class="input-field s3">
-                                  <input value="" type="date" id="cadComprData" class="">
+                                  <input tabindex="35" value="" type="date" id="cadComprData" class="">
                                   <label class="active" for="cadComprData">Data</label>
                                 </div>
                                 <div class="input-field s3">
-                                  <input value="" type="time" id="cadComprHora" class="">
+                                  <input tabindex="36" value="" type="time" id="cadComprHora" class="">
                                   <label class="active" for="cadComprHora">Horario</label>
                                 </div>
                               </div>
@@ -342,7 +338,7 @@
                             <a id="btnBuscaCompr" class="col s5 waves-effect waves-light btn-small"><i class="material-icons right">search</i>Buscar</a>
                           </div>
                           <div class="compr_menu_botoes_2_parte_2">
-                            <a id="btnlAlteraCompr" class="waves-effect waves-light btn-small"><i class="material-icons right">refresh</i>Alterar</a>
+                            <a id="btnAlteraCompr" class="waves-effect waves-light btn-small"><i class="material-icons right">refresh</i>Alterar</a>
                             <a id="btnExcluiCompr" class="waves-effect waves-light btn-small"><i class="material-icons right">delete_forever</i>Excluir</a>
                           </div>
                         </div>
@@ -358,23 +354,23 @@
                 </div>
 
                 <div class="row menu_busca">
-                <div class="sub_menu_busca">
-                  <div class="row">
-                    <div class="input-field col s11">
-                      <input value="" id="buscaVendedor" type="text" class="">
-                      <label class="active" for="buscaVendedor">Vendedor</label>
+                  <div class="sub_menu_busca">
+                    <div class="row">
+                      <div class="input-field col s11">
+                        <input tabindex="37" value="" id="buscaAgVend" type="text" class="">
+                        <label class="active" for="buscaAgVend">Vendedor</label>
+                      </div>
+                      <a id="btnBuscaAgVend" class="input-field col s6 waves-effect waves-light btn-small" style="margin-left: 1vw"><i class="material-icons right">search</i>Buscar</a>
                     </div>
-                    <a id="btnbuscaVendedor" class="input-field col s6 waves-effect waves-light btn-small" style="margin-left: 1vw"><i class="material-icons right">search</i>Buscar</a>
-                  </div>
 
-                  <div class="row">
-                    <div  class="input-field col s11">
-                      <input value="" id="buscaCliente" type="text" class="">
-                      <label class="active" for="buscaCliente">Cliente</label>
+                    <div class="row">
+                      <div  class="input-field col s11">
+                        <input tabindex="38" value="" type="text" class="" id="buscaAgCli">
+                        <label class="active" for="buscaAgCli">Cliente</label>
+                      </div>
+                      <a class="input-field col s6 waves-effect waves-light btn-small" style="margin-left: 1vw" id="btnBuscaAgCli"><i class="material-icons right">search</i>Buscar</a>
                     </div>
-                    <a id="btnbuscaCliente" class="input-field col s6 waves-effect waves-light btn-small" style="margin-left: 1vw"><i class="material-icons right">search</i>Buscar</a>
                   </div>
-                </div>
                 </div>
                 <div class="scroll-agenda">
                 <div class="agenda-compromisso">
@@ -716,8 +712,7 @@
 <script src="js/jQuery.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/script.js"></script>
-<script src="js/verificarCliente.js"></script>
-<script src="js/verificarVendedor.js"></script>
+<script src="js/validaCad.js"></script>
 <script src="js/verificarCompr.js"></script>
 <script src="js/verificarAgenda.js"></script>
 </html>

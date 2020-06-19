@@ -1,4 +1,4 @@
-function clickCadCliente(btn, cpf, nome, rg, emis, cep, end, num, compl, bairro, est, ddd1, tel1, ddd2, tel2) {
+function clickValidaCad(btn, cpf, nome, rg, emis, cep, end, num, compl, bairro, est, ddd1, tel1, ddd2, tel2) {
     
 
     btn.on("click", () => {
@@ -121,7 +121,7 @@ function clickCadCliente(btn, cpf, nome, rg, emis, cep, end, num, compl, bairro,
                 end.removeClass("invalid");
             }
 
-            if(isNaN(num.val()) == true) {
+            if(isNaN(num.val()) == true || num.val().length==0) {
                 const momentoToast = M.toast({
                     html: "Preencha corretamente o campo numero"
                 });
@@ -270,7 +270,7 @@ function clickCadCliente(btn, cpf, nome, rg, emis, cep, end, num, compl, bairro,
                     end.removeClass("invalid");
                 }
     
-                if(isNaN(num.val()) == true) {
+                if(isNaN(num.val()) == true || num.val().length==0) {
                     const momentoToast = M.toast({
                         html: "Preencha corretamente o campo numero"
                     });

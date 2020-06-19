@@ -26,53 +26,56 @@ function clickCadCompr(btn, idDesc, descr, idVend, nomeVend, cpfCli, nomeCli, da
         //caso validar campo de busca
         
         case 'searchBuscar':
-            if(idVend.val()!=0){ 
-                if(isNaN(idVend.val()) == true || (idVend.val().length<11 && idVend.val().length>11)){
+            
+            if (idDesc.val().length!=0){
+                if(isNaN(idDesc.val()) == true || idDesc.val().length<11){
                     const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo codigo"
+                        html: "Preencha corretamente o campo id Descrição corretamente"
+                    });
+                    idDesc.addClass("invalid");
+                    idDesc.removeClass("validate");
+                    idDesc.focus();
+                } else {
+                    idDesc.addClass("validate");
+                    idDesc.removeClass("invalid");
+                }
+            } else if(idVend.val().length!=0){
+                if(isNaN(idVend.val()) == true || idVend.val().length<11){
+                    const momentoToast = M.toast({
+                        html: "Preencha corretamente o campo id vendedor corretamente"
                     });
                     idVend.addClass("invalid");
                     idVend.removeClass("validate");
                     idVend.focus();
                 } else {
-                    cod.addClass("validate");
-                    cod.removeClass("invalid");
+                    idVend.addClass("validate");
+                    idVend.removeClass("invalid");
                 }
-
-                if(cpfCli.val()!=0){ 
-                    if(isNaN(cpfCli.val()) == true || (cpfCli.val().length<11 && cpfCli.val().length>11)){
-                        const momentoToast = M.toast({
-                            html: "Preencha corretamente o campo CPF"
-                        });
-                        cpfCli.addClass("invalid");
-                        cpfCli.removeClass("validate");
-                        cpfCli.focus();
-                    } else {
-                        cpfCli.addClass("validate");
-                        cpfCli.removeClass("invalid");
-                    }
-
-                if(idDesc.val()!=0){ 
-                    if(isNaN(idDesc.val()) == true || (idDesc.val().length<11 && idDesc.val().length>11)){
-                        const momentoToast = M.toast({
-                            html: "Preencha corretamente o campo CPF"
-                        });
-                        idDesc.addClass("invalid");
-                        idDesc.removeClass("validate");
-                        idDesc.focus();
-                    } else {
-                        cod.addClass("validate");
-                        cod.removeClass("invalid");
-                    }
+            } else if(cpfCli.val().length!=0) {
+                if(isNaN(cpfCli.val()) == true || cpfCli.val().length<11){
+                    const momentoToast = M.toast({
+                        html: "Preencha corretamente o campo CPF cliente corretamente"
+                    });
+                    cpfCli.addClass("invalid");
+                    cpfCli.removeClass("validate");
+                    cpfCli.focus();
+                } else {
+                    cpfCli.addClass("validate");
+                    cpfCli.removeClass("invalid");
+                }
             } else {
-                cpfCli.addClass("invalid");
-                cpfCli.removeClass("validate");
-                idVend.addClass("invalid");
-                idVend.removeClass("validate");
+                const momentoToast = M.toast({
+                    html: "Preencha corretamente um dos campos de busca"
+                });
                 idDesc.addClass("invalid");
                 idDesc.removeClass("validate");
                 idDesc.focus();
+                idVend.addClass("invalid");
+                idVend.removeClass("validate");
+                cpfCli.addClass("invalid");
+                cpfCli.removeClass("validate");
             }
+
             break;
 
         //caso validar campos cadastro
@@ -167,28 +170,16 @@ function clickCadCompr(btn, idDesc, descr, idVend, nomeVend, cpfCli, nomeCli, da
             //caso validar campos alterar
 
              case 'refreshAlterar':
-                if(isNaN(idVend.val()) == true || idVend.val().length!=11){
+                if(isNaN(idDesc.val()) == true || idDesc.val().length!=11){
                     const momentoToast = M.toast({
                         html: "Preencha corretamente o campo ID vendedor"
                     });
-                    idVend.addClass("invalid");
-                    idVend.removeClass("validate");
-                    idVend.focus();
+                    idDesc.addClass("invalid");
+                    idDesc.removeClass("validate");
+                    idDesc.focus();
                 } else {
-                    idVend.addClass("validate");
-                    idVend.removeClass("invalid");
-                }
-    
-                if(isNaN(cpfCli.val()) == true || cpfCli.val().length!=11){
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo CPF cliente"
-                    });
-                    cpfCli.addClass("invalid");
-                    cpfCli.removeClass("validate");
-                    cpfCli.focus();
-                } else {
-                    cpfCli.addClass("validate");
-                    cpfCli.removeClass("invalid");
+                    idDesc.addClass("validate");
+                    idDesc.removeClass("invalid");
                 }
     
                 if(descr.val().length<3) {
