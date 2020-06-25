@@ -35,7 +35,7 @@ var btnBuscaAgCli = $("#btnBuscaAgCli");
 var cadClienteCPF = $("#cadClienteCPF");
 var cadClienteNome = $("#cadClienteNome");
 var cadClienteRG = $("#cadClienteRG");
-var cadClienteEmis = $("#cadClienteEmis");
+// var cadClienteEmis = $("#cadClienteEmis");
 var cadClienteCEP = $("#cadClienteCEP");
 var cadClienteEnd = $("#cadClienteEnd");
 var cadClienteNum = $("#cadClienteNum");
@@ -54,7 +54,7 @@ var cadClienteTel2 = $("#cadClienteTel2");
 var cadVendCod = $("#cadVendCod");
 var cadVendNome = $("#cadVendNome");
 var cadVendRG = $("#cadVendRG");
-var cadVendEmis = $("#cadVendEmis");
+// var cadVendEmis = $("#cadVendEmis");
 var cadVendCPF = $("#cadVendCPF");
 var cadVendCEP = $("#cadVendCEP");
 var cadVendEnd = $("#cadVendEnd");
@@ -73,8 +73,8 @@ var cadComprID = $("#cadComprID");
 var cadComprIdVend = $("#cadComprIdVend");
 var cadComprCpfCliente = $("#cadComprCpfCliente");
 var cadComprEvent = $("#cadComprEvent");
-var cadComprNomeVend = $("#cadComprNomeVend");
-var cadComprNomeCliente = $("#cadComprNomeCliente");
+// var cadComprNomeVend = $("#cadComprNomeVend");
+// var cadComprNomeCliente = $("#cadComprNomeCliente");
 var cadComprData = $("#cadComprData");
 var cadComprHora = $("#cadComprHora");
 
@@ -87,37 +87,37 @@ var buscaAgCli = $("#buscaAgCli");
 // chamadas das funções 
 $(function(){
   //chamada das funções validar cliente
-  clickValidaCad(btnLimpaCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteEmis, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
+  clickValidaCad(btnLimpaCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
 
   clickValidaCad(btnBuscaCliente, cadClienteCPF);
 
-  clickValidaCad(btnCadastraCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteEmis, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
+  clickValidaCad(btnCadastraCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
 
-  clickValidaCad(btnAlteraCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteEmis, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
+  clickValidaCad(btnAlteraCliente, cadClienteCPF, cadClienteNome, cadClienteRG, cadClienteCEP, cadClienteEnd, cadClienteNum, cadClienteComp, cadClienteBair, cadClienteEst, cadClienteDDD1, cadClienteTel1, cadClienteDDD2, cadClienteTel2);
 
   clickValidaCad(btnExcluiCliente, cadClienteCPF);
 
   //chamada das funções validar cliente
-  clickValidaCad(btnLimpaVend, cadVendCPF, cadVendNome, cadVendRG, cadVendEmis, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
+  clickValidaCad(btnLimpaVend, cadVendCPF, cadVendNome, cadVendRG, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
 
   clickValidaCad(btnBuscaVend, cadVendCPF);
 
-  clickValidaCad(btnCadastraVend, cadVendCPF, cadVendNome, cadVendRG, cadVendEmis, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
+  clickValidaCad(btnCadastraVend, cadVendCPF, cadVendNome, cadVendRG, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
 
-  clickValidaCad(btnAlteraVend, cadVendCPF, cadVendNome, cadVendRG, cadVendEmis, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
+  clickValidaCad(btnAlteraVend, cadVendCPF, cadVendNome, cadVendRG, cadVendCEP, cadVendEnd, cadVendNum, cadVendComp, cadVendBair, cadVendEst, cadVendDDD1, cadVendTel1, cadVendDDD2, cadVendTel2);
 
   clickValidaCad(btnExcluiVend, cadVendCPF);
 
   //chamada das funções validar compromisso
-  clickCadCompr(btnLimpaCompr, cadComprID, cadComprEvent, cadComprIdVend, cadComprNomeVend, cadComprCpfCliente, cadComprNomeCliente, cadComprData, cadComprHora);
+  clickCadCompr(btnLimpaCompr, cadComprID, cadComprEvent, cadComprIdVend, cadComprCpfCliente, cadComprData, cadComprHora);
 
-  clickCadCompr(btnBuscaCompr, cadComprID, null, cadComprIdVend, null, cadComprCpfCliente);
+  clickCadCompr(btnBuscaCompr, cadComprID, cadComprIdVend, cadComprCpfCliente);
 
-  clickCadCompr(btnCadastraCompr, cadComprID, cadComprEvent, cadComprIdVend, cadComprNomeVend, cadComprCpfCliente, cadComprNomeCliente, cadComprData, cadComprHora);
+  clickCadCompr(btnCadastraCompr, cadComprID, cadComprEvent, cadComprIdVend, cadComprCpfCliente, cadComprData, cadComprHora);
 
-  clickCadCompr(btnAlteraCompr, cadComprID, cadComprEvent, cadComprIdVend, cadComprNomeVend, cadComprCpfCliente, cadComprNomeCliente, cadComprData, cadComprHora);
+  clickCadCompr(btnAlteraCompr, cadComprID, cadComprEvent, cadComprIdVend, cadComprCpfCliente, cadComprData, cadComprHora);
 
-  clickCadCompr(btnExcluiCompr, cadComprID, null, cadComprIdVend, null, cadComprCpfCliente);
+  clickCadCompr(btnExcluiCompr, cadComprID, cadComprIdVend, cadComprCpfCliente);
 
   //chamada das funções validar busca
 

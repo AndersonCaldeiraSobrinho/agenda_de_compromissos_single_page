@@ -1,21 +1,25 @@
 <?php
     require_once(__DIR__."/database.class.php");
     class Appointment extends Database {
-        public $cod;
-        public $cpfP;
-        public $cpfC;
-        public $info;
-        public $date;
+        public $comprId;
+        public $comprCpfVend;
+        public $comprCpfCliente;
+        public $comprEvent;
+        public $comprNomeVend;
+        public $comprNomeCliente;
+        public $comprData;
+        public $comprHora;
+
 
         private $strErr = "";
 
-        public function registerAppo() {
+        public function registerCompr() {
             try {
-                $sqlStr = "INSERT INTO compromisso(codigo, cpfPessoa, cpfCliente, info, dataComp) VALUES ('".$this->cod."','".$this->cpfP."','".$this->cpfC."','".$this->info."','".$this->date."')";
+                $sqlStr = "INSERT INTO compromisso(id, cpfVend, cpfCliente, evento, nomeVend, nomeCliente, dataDia, hora) VALUES ('".$this->comprId."','".$this->comprCpfVend."','".$this->comprCpfCliente."','".$this->comprEvent."','".$this->comprNomeVend."','".$this->comprNomeCliente."','".$this->comprData."','".$this->comprHora."')";
                 if (self::exeSql($sqlStr) > 0) {
                     return true;
                 } else {
-                    $this->strErr = "Houve um erro no registro do compromisso.";
+                    $this->strErr = "Houve um erro no registro do compromisso."; 
                     return false;
                 }
             } catch (Exception $err) {
@@ -24,9 +28,9 @@
             }
         }
 
-        public function searchAppo() {
+        public function searchCompr() {
             try {
-                $sqlStr = "SELECT * FROM compromisso WHERE codigo =".$this->cod;
+                $sqlStr = "SELECT * FROM compromisso WHERE codigo =".$this->comprId;
                 $data = self::searchDb($sqlStr);
                 if ($data == null) {
                     $this->strErr = "Compromisso não encontrado.";
@@ -38,9 +42,9 @@
             }
         }
 
-        public function updateAppo() {
+        public function updateCompr() {
             try {
-                $sqlStr = "UPDATE compromisso SET cpfPessoa = '".$this->cpfP."',cpfCliente = '".$this->cpfC."',info = '".$this->info."',dataComp = '".$this->date."' WHERE codigo=".$this->cod;
+                $sqlStr = "UPDATE compromisso SET cpfVend = '".$this->cpfC."',cpfCliente = '".$this->cpfC."',evento = '".$this->comprEvent."',nomeVend = '".$this->comprNomeVend."',nomeCliente = '".$this->comprNomeCliente."',dataDia = '".$this->comprData."',hora = '".$this->comprHora."' WHERE codigo=".$this->comprId;
                 if (self::exeSql($sqlStr) >= 0) {
                     return true;
                 } else {
@@ -53,9 +57,9 @@
             }
         }
 
-        public function deleteAppo() {
+        public function deleteCompr() {
             try {
-                $sqlStr = "DELETE FROM compromisso WHERE codigo=".$this->cod;
+                $sqlStr = "DELETE FROM compromisso WHERE codigo=".$this->commprId;
                 if (self::exeSql($sqlStr) > 0) {
                     return true;
                 } else {

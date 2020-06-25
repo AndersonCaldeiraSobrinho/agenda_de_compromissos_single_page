@@ -1,7 +1,8 @@
 <?php
-    require_once(__DIR__."./database.class.php");
+    require_once(__DIR__."/database.class.php");
 
-    class Client extends Database {
+    class Seller extends Database {
+        // Setup public variables from webpage
         public $cpf;
         public $nome;
         public $rg;
@@ -17,16 +18,16 @@
         public $dddDois;
         public $telDois;
 
-
+        // Setup private variables
         private $strErr = "";
 
-        public function registerCliente() {
+        public function registerSeller() {
             try {
-                $sqlStr = "INSERT INTO cliente (cpf, nome, rg, emis, cep, endereco, num, comp, bairro, uf, dddUm, telUm, dddDois, telDois) VALUES('".$this->cpf."','".$this->nome."','".$this->rg."','".$this->emis."','".$this->cep."','".$this->ende."','".$this->num."','".$this->comp."','".$this->bairro."','".$this->uf."','".$this->dddUm."','".$this->telUm."','".$this->dddDois."','".$this->telDois."')";
-                if (self::exeSql($sqlStr) > 0) {
+                $sqlStr = "INSERT INTO vendedor (cpf, nome, rg, emis, cep, endereco, num, comp, bairro, uf, dddUm, telUm, dddDois, telDois) VALUES('".$this->cpf."','".$this->nome."','".$this->rg."','".$this->emis."','".$this->cep."','".$this->ende."','".$this->num."','".$this->comp."','".$this->bairro."','".$this->uf."','".$this->dddUm."','".$this->telUm."','".$this->dddDois."','".$this->telDois."')";
+                if ((self::exeSql($sqlStr)) > 0) {
                     return true;
                 } else {
-                    $this->strErr = "Houve um erro no registro do cliente.";
+                    $this->strErr = "Houve um erro no registro da vendedor.";
                     return false;
                 }
             } catch (Exception $err) {
@@ -35,12 +36,12 @@
             }
         }
 
-        public function searchCliente() {
+        public function searchSeller() {
             try {
-                $sqlStr = "SELECT * FROM cliente WHERE cpf=".$this->cpf;
+                $sqlStr = "SELECT * FROM vendedor WHERE cpf =".$this->cpf;
                 $data = self::searchDb($sqlStr);
                 if ($data == null) {
-                    $this->strErr = "Cliente não encontrado.";
+                    $this->strErr = "vendedor não encontrada.";
                 }
                 return $data;
             } catch (Exception $err) {
@@ -49,13 +50,13 @@
             }
         }
 
-        public function updateCliente() {
+        public function updateSeller() {
             try {
-                $sqlStr = "UPDATE cliente SET nome = '".$this->nome."', rg = '".$this->rg."', emis = '".$this->emis."', cep = '".$this->cep."', endereco = '".$this->endereco."', num = '".$this->num."', comp = '".$this->comp."', bairro = '".$this->bairro."', uf = '".$this->uf."', dddUm = '".$this->dddUm."', telUm = '".$this->telUm."', dddDois = '".$this->dddDois."', telDois = '".$this->telDois."' WHERE cpf=".$this->cpf;
+                $sqlStr = "UPDATE vendedor SET nome = '".$this->nome."', rg = '".$this->rg."', emis = '".$this->emis."', cep = '".$this->cep."', endereco = '".$this->endereco."', num = '".$this->num."', comp = '".$this->comp."', bairro = '".$this->bairro."', uf = '".$this->uf."', dddUm = '".$this->dddUm."', telUm = '".$this->telUm."', dddDois = '".$this->dddDois."', telDois = '".$this->telDois."' WHERE cpf=".$this->cpf;
                 if (self::exeSql($sqlStr) >= 0) {
                     return true;
                 } else {
-                    $this->strErr = "Houve um problema na atualização do cliente.";
+                    $this->strErr = "Houve um problema na atualização da vendedor.";
                     return false;
                 }
             } catch (Exception $err) {
@@ -64,13 +65,13 @@
             }
         }
 
-        public function deleteCliente() {
+        public function deleteSeller() {
             try {
-                $sqlStr = "DELETE FROM cliente WHERE cpf=".$this->cpf;
+                $sqlStr = "DELETE FROM vendedor WHERE cpf=".$this->cpf;
                 if (self::exeSql($sqlStr) > 0) {
                     return true;
                 } else {
-                    $this->strErr = "Houve um problema na remoção do cliente.";
+                    $this->strErr = "Houve um problema na remoção da vendedor.";
                     return false;
                 }
             } catch (Exception $err) {

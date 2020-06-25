@@ -1,6 +1,7 @@
-function clickValidaCad(btn, cpf, nome, rg, emis, cep, end, num, compl, bairro, est, ddd1, tel1, ddd2, tel2) {
+function clickValidaCad(btn, cpf, nome, rg, cep, end, num, compl, bairro, est, ddd1, tel1, ddd2, tel2) {
     
-
+    const formCliente = document.getElementById('formCliente')
+    const formVendedor = document.getElementById('formVendedor')
     btn.on("click", () => {
 
     switch(btn.text()){
@@ -8,358 +9,435 @@ function clickValidaCad(btn, cpf, nome, rg, emis, cep, end, num, compl, bairro, 
         //caso limpar campos
 
         case 'clear_allLimpar':
-            cpf = cpf.val("");
-            nome=nome.val("");
-            rg =rg.val("");
-            emis=emis.val("");
-            cep=cep.val("");
-            end=end.val("");
-            num=num.val("");
-            compl=compl.val("");
-            bairro=bairro.val("");
-            est=est.val("");
-            ddd1=ddd1.val("");
-            tel1=tel1.val("");
-            ddd2=ddd2.val("");
-            tel2=tel2.val("");
+            cpf     = cpf.val("");
+            nome    = nome.val("");
+            rg      = rg.val("");
+            cep     = cep.val("");
+            end     = end.val("");
+            num     = num.val("");
+            compl   = compl.val("");
+            bairro  = bairro.val("");
+            est     = est.val("");
+            ddd1    = ddd1.val("");
+            tel1    = tel1.val("");
+            ddd2    = ddd2.val("");
+            tel2    = tel2.val("");
 
             const momentoToast = M.toast({
                    html: "Campos limpos com sucesso"
-               });
+            });
 
             break;
 
         //caso validar campo de busca
 
         case 'searchBuscar':
-            if(isNaN(cpf.val()) == true || cpf.val().length<11){
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo CPF"
-                });
-                cpf.addClass("invalid");
-                cpf.removeClass("validate");
-                cpf.focus();
+            if (!cpf.val().length) {
+                cpf.addClass('invalid')
+                cpf.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo CPF"
+                })
+            } else if (isNaN(cpf.val())) {
+                cpf.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo CPF com valors numéricos"
+                })
             } else {
-                cpf.addClass("validate");
-                cpf.removeClass("invalid");
+                cpf.removeClass('invalid')
+                cpf.addClass('validate')
+                cpf.focus()
+                if (btn.attr('id') == 'btnBuscaVend') {
+                    formVendedor.action = './index.php?action=' + btn.attr('id')
+                    formVendedor.submit()
+                }
+                formCliente.action = './index.php?action=' + btn.attr('id')
+                formCliente.submit()
             }
-
-            break;
+            return false
 
         //caso validar campos cadastro
 
         case 'sendCadastrar':
-            if(isNaN(cpf.val()) == true || cpf.val().length!=11){
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo CPF"
-                });
-                cpf.addClass("invalid");
-                cpf.removeClass("validate");
-                cpf.focus();
+            if (!cpf.val().length) {
+                cpf.addClass('invalid')
+                cpf.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo CPF"
+                })
+            } else if (isNaN(cpf.val())) {
+                cpf.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo CPF com valores numéricos"
+                })
+            } else if (cpf.val().length < 11) {
+                cpf.focus()
+                const momentoToast = M.toast ({
+                    html: "O campo CPF precisa ter 11 dígitos"
+                })
+            } else if (!nome.val().length) {
+                cpf.removeClass('invalid')
+                cpf.addClass('validate')
+                nome.addClass('invalid')
+                nome.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Nome"
+                })
+            } else if (!rg.val().length) {
+                nome.removeClass('invalid')
+                nome.addClass('validate')
+                rg.addClass('invalid')
+                rg.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo RG"
+                })
+            } else if (!cep.val().length) {
+                rg.removeClass('invalid')
+                rg.addClass('validate')
+                cep.addClass('invalid')
+                cep.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo CEP"
+                })
+            } else if (isNaN(cep.val())) {
+                cep.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo CEP com valores numéricos"
+                })
+            } else if (cep.val() < 8) {
+                cep.focus()
+                const momentoToast = M.toast ({
+                    html: "O campo CEP precisa ter 8 digitos"
+                })
+            } else if (!end.val().length) {
+                cep.removeClass('invalid')
+                cep.addClass('validate')
+                end.addClass('invalid')
+                end.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Endereço"
+                })
+            } else if (!num.val().length) {
+                end.removeClass('invalid')
+                end.addClass('validate')
+                num.addClass('invalid')
+                num.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Num"
+                })
+            } else if (!compl.val().length) {
+                num.removeClass('invalid')
+                num.addClass('validate')
+                compl.addClass('invalid')
+                compl.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Complemento"
+                })
+            } else if (!bairro.val().length) {
+                compl.removeClass('invalid')
+                compl.addClass('validate')
+                bairro.addClass('invalid')
+                bairro.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Bairro"
+                })
+            } else if (!est.children("option:selected").val().length) {
+                bairro.removeClass('invalid')
+                bairro.addClass('validate')
+                est.addClass('invalid')
+                est.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Estado"
+                })
+            } else if (!ddd1.val().length) {
+                est.removeClass('invalid')
+                est.addClass('validate')
+                ddd1.addClass('invalid')
+                ddd1.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo DDD"
+                })
+            } else if (isNaN(ddd1.val())) {
+                ddd1.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo DDD com valores numéricos"
+                })
+            } else if (ddd1.val().length < 3) {
+                ddd1.focus()
+                const momentoToast = M.toast ({
+                    html: "O campo DDD precisa ter 3 digitos"
+                })
+            } else if (!tel1.val().length) {
+                ddd1.removeClass('invalid')
+                ddd1.addClass('validate')
+                tel1.addClass('invalid')
+                tel1.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Telefone"
+                })
+            } else if (isNaN(tel1.val())) {
+                tel1.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Telefone com valores numéricos"
+                })
+            } else if (tel1.val().length < 8) {
+                tel1.focus()
+                const momentoToast = M.toast ({
+                    html: "O campo Telefone precisa ter 8 digitos"
+                })
+            } else if (!ddd2.val().length) {
+                tel1.removeClass('invalid')
+                tel1.addClass('validate')
+                ddd2.addClass('invalid')
+                ddd2.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo DDD"
+                })
+            } else if (isNaN(ddd2.val())) {
+                ddd2.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo DDD com valores numéricos"
+                })
+            } else if (ddd2.val().length < 3) {
+                ddd2.focus()
+                const momentoToast = M.toast ({
+                    html: "O campo DDD precisa ter 3 digitos"
+                })
+            } else if (!tel2.val().length) {
+                ddd2.removeClass('invalid')
+                ddd2.addClass('validate')
+                tel2.addClass('invalid')
+                tel2.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Celular"
+                })
+            } else if (isNaN(tel2.val())) {
+                tel2.focus()
+                const momentoToast = M.toast ({
+                    html: "Preencha o campo Celular com valores numéricos"
+                })
+            } else if (tel2.val().length < 3) {
+                tel2.focus()
+                const momentoToast = M.toast ({
+                    html: "O campo Celular precisa ter 3 digitos"
+                })
             } else {
-                cpf.addClass("validate");
-                cpf.removeClass("invalid");
+                tel2.removeClass('invalid')
+                tel2.addClass('validate')
+                tel2.focus()
+                if (btn.attr('id') == 'btnBuscaVend') {
+                    formVendedor.action = './index.php?action=' + btn.attr('id')
+                    formVendedor.submit()
+                }
+                formCliente.action = './index.php?action=' + btn.attr('id')
+                formCliente.submit()
             }
+            return false
 
-            if(nome.val().length<3) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo Nome"
-                });
-                nome.addClass("invalid");
-                nome.removeClass("validate");
-                nome.focus();
-            } else {
-                nome.addClass("validate");
-                nome.removeClass("invalid");
-            }
-
-            if(rg.val().length>=15 || rg.val().length<5) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo RG"
-                });
-                rg.addClass("invalid");
-                rg.removeClass("validate");
-                rg.focus();
-            } else {
-                rg.addClass("validate");
-                rg.removeClass("invalid");
-            }
-
-            if(isNaN(emis.val())==false) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo emissor"
-                });
-                emis.addClass("invalid");
-                emis.removeClass("validate");
-                emis.focus();
-            } else {
-                emis.addClass("validate");
-                emis.removeClass("invalid");
-            }
-
-            if(isNaN(cep.val()) == true || cep.val().length!=9) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo C.E.P."
-                });
-                cep.addClass("invalid");
-                cep.removeClass("validate");
-                cep.focus();
-            } else {
-                cep.addClass("validate");
-                cep.removeClass("invalid");
-            }
-
-            if(end.val().length < 3) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo endereço"
-                });
-                end.addClass("invalid");
-                end.removeClass("validate");
-                end.focus();
-            } else {
-                end.addClass("validate");
-                end.removeClass("invalid");
-            }
-
-            if(isNaN(num.val()) == true || num.val().length==0) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo numero"
-                });
-                num.addClass("invalid");
-                num.removeClass("validate");
-                num.focus();
-            } else {
-                num.addClass("validate");
-                num.removeClass("invalid");
-            }
-
-            if(bairro.val().length < 5) {
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo bairro"
-                });
-                bairro.addClass("invalid");
-                bairro.removeClass("validate");
-                bairro.focus();
-            } else {
-                bairro.addClass("validate");
-                bairro.removeClass("invalid");
-            }
-
-            if(isNaN(ddd1.val()) == true || (ddd1.val().length<=1 || ddd1.val().length >3)){
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo DDD"
-                });
-                ddd1.addClass("invalid");
-                ddd1.removeClass("validate");
-                ddd1.focus();
-            } else {
-                ddd1.addClass("validate");
-                ddd1.removeClass("invalid");
-            }
-
-            if(isNaN(tel1.val()) == true || (tel1.val().length!=8 || tel1.val().length !=9)){
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo telefone"
-                });
-                tel1.addClass("invalid");
-                tel1.removeClass("validate");
-                tel1.focus();
-            } else {
-                tel1.addClass("validate");
-                tel1.removeClass("invalid");
-            }
-
-            if(isNaN(ddd2.val()) == true || (ddd2.val().length<=1 || ddd2.val().length >3)){
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo DDD"
-                });
-                ddd2.addClass("invalid");
-                ddd2.removeClass("validate");
-                ddd2.focus();
-            } else {
-                ddd2.addClass("validate");
-                ddd2.removeClass("invalid");
-            }
-
-            if(isNaN(tel2.val()) == true || (tel2.val().length!=8 || tel2.val().length !=9)){
-                const momentoToast = M.toast({
-                    html: "Preencha corretamente o campo telefone"
-                });
-                tel2.addClass("invalid");
-                tel2.removeClass("validate");
-                tel2.focus();
-            } else {
-                tel2.addClass("validate");
-                tel2.removeClass("invalid");
-            }
-
-            break;
 
             //caso validar campos alterar
-
              case 'refreshAlterar':
-                if(isNaN(cpf.val()) == true || cpf.val().length!=11){
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo CPF"
-                    });
-                    cpf.addClass("invalid");
-                    cpf.removeClass("validate");
-                    cpf.focus();
+                if (!cpf.val().length) {
+                    cpf.addClass('invalid')
+                    cpf.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo CPF"
+                    })
+                } else if (isNaN(cpf.val())) {
+                    cpf.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo CPF com valores numéricos"
+                    })
+                } else if (cpf.val().length < 11) {
+                    cpf.focus()
+                    const momentoToast = M.toast ({
+                        html: "O campo CPF precisa ter 11 dígitos"
+                    })
+                } else if (!nome.val().length) {
+                    cpf.removeClass('invalid')
+                    cpf.addClass('validate')
+                    nome.addClass('invalid')
+                    nome.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Nome"
+                    })
+                } else if (!rg.val().length) {
+                    nome.removeClass('invalid')
+                    nome.addClass('validate')
+                    rg.addClass('invalid')
+                    rg.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo RG"
+                    })
+                } else if (!cep.val().length) {
+                    rg.removeClass('invalid')
+                    rg.addClass('validate')
+                    cep.addClass('invalid')
+                    cep.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo CEP"
+                    })
+                } else if (isNaN(cep.val())) {
+                    cep.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo CEP com valores numéricos"
+                    })
+                } else if (cep.val() < 8) {
+                    cep.focus()
+                    const momentoToast = M.toast ({
+                        html: "O campo CEP precisa ter 8 digitos"
+                    })
+                } else if (!end.val().length) {
+                    cep.removeClass('invalid')
+                    cep.addClass('validate')
+                    end.addClass('invalid')
+                    end.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Endereço"
+                    })
+                } else if (!num.val().length) {
+                    end.removeClass('invalid')
+                    end.addClass('validate')
+                    num.addClass('invalid')
+                    num.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Num"
+                    })
+                } else if (!compl.val().length) {
+                    num.removeClass('invalid')
+                    num.addClass('validate')
+                    compl.addClass('invalid')
+                    compl.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Complemento"
+                    })
+                } else if (!bairro.val().length) {
+                    compl.removeClass('invalid')
+                    compl.addClass('validate')
+                    bairro.addClass('invalid')
+                    bairro.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Bairro"
+                    })
+                } else if (!est.children("option:selected").val().length) {
+                    bairro.removeClass('invalid')
+                    bairro.addClass('validate')
+                    est.addClass('invalid')
+                    est.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Estado"
+                    })
+                } else if (!ddd1.val().length) {
+                    est.removeClass('invalid')
+                    est.addClass('validate')
+                    ddd1.addClass('invalid')
+                    ddd1.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo DDD"
+                    })
+                } else if (isNaN(ddd1.val())) {
+                    ddd1.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo DDD com valores numéricos"
+                    })
+                } else if (ddd1.val().length < 3) {
+                    ddd1.focus()
+                    const momentoToast = M.toast ({
+                        html: "O campo DDD precisa ter 3 digitos"
+                    })
+                } else if (!tel1.val().length) {
+                    ddd1.removeClass('invalid')
+                    ddd1.addClass('validate')
+                    tel1.addClass('invalid')
+                    tel1.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Telefone"
+                    })
+                } else if (isNaN(tel1.val())) {
+                    tel1.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Telefone com valores numéricos"
+                    })
+                } else if (tel1.val().length < 8) {
+                    tel1.focus()
+                    const momentoToast = M.toast ({
+                        html: "O campo Telefone precisa ter 8 digitos"
+                    })
+                } else if (!ddd2.val().length) {
+                    tel1.removeClass('invalid')
+                    tel1.addClass('validate')
+                    ddd2.addClass('invalid')
+                    ddd2.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo DDD"
+                    })
+                } else if (isNaN(ddd2.val())) {
+                    ddd2.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo DDD com valores numéricos"
+                    })
+                } else if (ddd2.val().length < 3) {
+                    ddd2.focus()
+                    const momentoToast = M.toast ({
+                        html: "O campo DDD precisa ter 3 digitos"
+                    })
+                } else if (!tel2.val().length) {
+                    ddd2.removeClass('invalid')
+                    ddd2.addClass('validate')
+                    tel2.addClass('invalid')
+                    tel2.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Celular"
+                    })
+                } else if (isNaN(tel2.val())) {
+                    tel2.focus()
+                    const momentoToast = M.toast ({
+                        html: "Preencha o campo Celular com valores numéricos"
+                    })
+                } else if (tel2.val().length < 3) {
+                    tel2.focus()
+                    const momentoToast = M.toast ({
+                        html: "O campo Celular precisa ter 3 digitos"
+                    })
                 } else {
-                    cpf.addClass("validate");
-                    cpf.removeClass("invalid");
+                    tel2.removeClass('invalid')
+                    tel2.addClass('validate')
+                    tel2.focus()
+                    if (btn.attr('id') == 'btnBuscaVend') {
+                        formVendedor.action = './index.php?action=' + btn.attr('id')
+                        formVendedor.submit()
+                    }
+                    formCliente.action = './index.php?action=' + btn.attr('id')
+                    formCliente.submit()
                 }
-    
-                if(nome.val().length<3) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo Nome"
-                    });
-                    nome.addClass("invalid");
-                    nome.removeClass("validate");
-                    nome.focus();
-                } else {
-                    nome.addClass("validate");
-                    nome.removeClass("invalid");
-                }
-    
-                if(rg.val().length>=15 || rg.val().length<5) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo RG"
-                    });
-                    rg.addClass("invalid");
-                    rg.removeClass("validate");
-                    rg.focus();
-                } else {
-                    rg.addClass("validate");
-                    rg.removeClass("invalid");
-                }
-    
-                if(isNaN(emis.val())==false) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo emissor"
-                    });
-                    emis.addClass("invalid");
-                    emis.removeClass("validate");
-                    emis.focus();
-                } else {
-                    emis.addClass("validate");
-                    emis.removeClass("invalid");
-                }
-    
-                if(isNaN(cep.val()) == true || cep.val().length!=9) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo C.E.P."
-                    });
-                    cep.addClass("invalid");
-                    cep.removeClass("validate");
-                    cep.focus();
-                } else {
-                    cep.addClass("validate");
-                    cep.removeClass("invalid");
-                }
-    
-                if(end.val().length < 3) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo endereço"
-                    });
-                    end.addClass("invalid");
-                    end.removeClass("validate");
-                    end.focus();
-                } else {
-                    end.addClass("validate");
-                    end.removeClass("invalid");
-                }
-    
-                if(isNaN(num.val()) == true || num.val().length==0) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo numero"
-                    });
-                    num.addClass("invalid");
-                    num.removeClass("validate");
-                    num.focus();
-                } else {
-                    num.addClass("validate");
-                    num.removeClass("invalid");
-                }
-    
-                if(bairro.val().length < 5) {
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo bairro"
-                    });
-                    bairro.addClass("invalid");
-                    bairro.removeClass("validate");
-                    bairro.focus();
-                } else {
-                    bairro.addClass("validate");
-                    bairro.removeClass("invalid");
-                }
-    
-                if(isNaN(ddd1.val()) == true || (ddd1.val().length<=1 || ddd1.val().length >3)){
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo DDD"
-                    });
-                    ddd1.addClass("invalid");
-                    ddd1.removeClass("validate");
-                    ddd1.focus();
-                } else {
-                    ddd1.addClass("validate");
-                    ddd1.removeClass("invalid");
-                }
-    
-                if(isNaN(tel1.val()) == true || (tel1.val().length!=8 || tel1.val().length !=9)){
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo telefone"
-                    });
-                    tel1.addClass("invalid");
-                    tel1.removeClass("validate");
-                    tel1.focus();
-                } else {
-                    tel1.addClass("validate");
-                    tel1.removeClass("invalid");
-                }
-    
-                if(isNaN(ddd2.val()) == true || (ddd2.val().length<=1 || ddd2.val().length >3)){
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo DDD"
-                    });
-                    ddd2.addClass("invalid");
-                    ddd2.removeClass("validate");
-                    ddd2.focus();
-                } else {
-                    ddd2.addClass("validate");
-                    ddd2.removeClass("invalid");
-                }
-    
-                if(isNaN(tel2.val()) == true || (tel2.val().length!=8 || tel2.val().length !=9)){
-                    const momentoToast = M.toast({
-                        html: "Preencha corretamente o campo telefone"
-                    });
-                    tel2.addClass("invalid");
-                    tel2.removeClass("validate");
-                    tel2.focus();
-                } else {
-                    tel2.addClass("validate");
-                    tel2.removeClass("invalid");
-                }
-    
-                break;
+                return false
+
 
                 //caso validar campos excluir
-
                 case 'delete_foreverExcluir':
-                    if(isNaN(cpf.val()) == true || cpf.val().length<11){
-                        const momentoToast = M.toast({
-                            html: "Preencha corretamente o campo CPF"
-                        });
-                        cpf.addClass("invalid");
-                        cpf.removeClass("validate");
-                        cpf.focus();
+                    if (!cpf.val().length) {
+                        cpf.addClass('invalid')
+                        cpf.focus()
+                        const momentoToast = M.toast ({
+                            html: "Preencha o campo CPF"
+                        })
+                    } else if (isNaN(cpf.val())) {
+                        cpf.focus()
+                        const momentoToast = M.toast ({
+                            html: "Preencha o campo CPF com valors numéricos"
+                        })
                     } else {
-                        cpf.addClass("validate");
-                        cpf.removeClass("invalid");
+                        cpf.removeClass('invalid')
+                        cpf.addClass('validate')
+                        cpf.focus()
+                        if (btn.attr('id') == 'btnBuscaVend') {
+                            formVendedor.action = './index.php?action=' + btn.attr('id')
+                            formVendedor.submit()
+                        }
+                        formCliente.action = './index.php?action=' + btn.attr('id')
+                        formCliente.submit()
                     }
-                    
-                    break;
+                    return false
                     
                 default:
                     
