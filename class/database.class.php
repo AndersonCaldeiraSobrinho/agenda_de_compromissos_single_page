@@ -2,8 +2,8 @@
 class Database {
     private $server     = "localhost";
     private $db         = "projectds";
-    private $user       = "root";
-    private $passwd     = "brasileiroo951...";
+    private $user       = "UsuarioAqui";
+    private $passwd     = "SuaSenhaAqui";
     private $strErr     = "";
     private $connection = "";
 
