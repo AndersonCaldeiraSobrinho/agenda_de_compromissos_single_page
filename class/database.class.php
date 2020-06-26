@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $server     = "localhost";
-    private $db         = "consultadb";
-    private $user       = "anderson";
-    private $passwd     = "3847";
+    private $db         = "projectds";
+    private $user       = "root";
+    private $passwd     = "brasileiroo951...";
     private $strErr     = "";
     private $connection = "";
 

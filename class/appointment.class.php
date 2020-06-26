@@ -1,12 +1,10 @@
 <?php
     require_once(__DIR__."/database.class.php");
     class Appointment extends Database {
-        public $comprId;
-        public $comprCpfVend;
-        public $comprCpfCliente;
-        public $comprEvent;
-        public $comprNomeVend;
-        public $comprNomeCliente;
+        public $id;
+        public $cpfVend;
+        public $cpfCliente;
+        public $event;
         public $comprData;
         public $comprHora;
 
@@ -15,7 +13,7 @@
 
         public function registerCompr() {
             try {
-                $sqlStr = "INSERT INTO compromisso(id, cpfVend, cpfCliente, evento, nomeVend, nomeCliente, dataDia, hora) VALUES ('".$this->comprId."','".$this->comprCpfVend."','".$this->comprCpfCliente."','".$this->comprEvent."','".$this->comprNomeVend."','".$this->comprNomeCliente."','".$this->comprData."','".$this->comprHora."')";
+                $sqlStr = "INSERT INTO compromisso(id, cpfVend, cpfCliente, evento, dataDia, hora) VALUES ('".$this->id."','".$this->cpfVend."','".$this->cpfCliente."','".$this->event."','".$this->comprData."','".$this->comprHora."')";
                 if (self::exeSql($sqlStr) > 0) {
                     return true;
                 } else {
@@ -30,7 +28,7 @@
 
         public function searchCompr() {
             try {
-                $sqlStr = "SELECT * FROM compromisso WHERE codigo =".$this->comprId;
+                $sqlStr = "SELECT * FROM compromisso WHERE id =".$this->id;
                 $data = self::searchDb($sqlStr);
                 if ($data == null) {
                     $this->strErr = "Compromisso não encontrado.";
@@ -44,7 +42,7 @@
 
         public function updateCompr() {
             try {
-                $sqlStr = "UPDATE compromisso SET cpfVend = '".$this->cpfC."',cpfCliente = '".$this->cpfC."',evento = '".$this->comprEvent."',nomeVend = '".$this->comprNomeVend."',nomeCliente = '".$this->comprNomeCliente."',dataDia = '".$this->comprData."',hora = '".$this->comprHora."' WHERE codigo=".$this->comprId;
+                $sqlStr = "UPDATE compromisso SET cpfVend = '".$this->cpfVend."',cpfCliente = '".$this->cpfCliente."',evento = '".$this->event."',dataDia = '".$this->comprData."',hora = '".$this->comprHora."' WHERE id=".$this->id;
                 if (self::exeSql($sqlStr) >= 0) {
                     return true;
                 } else {
@@ -59,7 +57,7 @@
 
         public function deleteCompr() {
             try {
-                $sqlStr = "DELETE FROM compromisso WHERE codigo=".$this->commprId;
+                $sqlStr = "DELETE FROM compromisso WHERE id=".$this->commprId;
                 if (self::exeSql($sqlStr) > 0) {
                     return true;
                 } else {

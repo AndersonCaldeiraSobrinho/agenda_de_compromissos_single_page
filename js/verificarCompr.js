@@ -40,7 +40,7 @@ function clickCadCompr(btn, idDesc, descr, cpfVend, cpfCli, data, hora) {
                 idDesc.removeClass('invalid')
                 idDesc.addClass('validate')
                 idDesc.focus()
-                formCompr.action    = './index.php?action=' + btn.text()
+                formCompr.action = './index.php?action=' + btn.attr('id')
                 formCompr.submit()
             }
             return false
@@ -128,7 +128,7 @@ function clickCadCompr(btn, idDesc, descr, cpfVend, cpfCli, data, hora) {
                 hora.removeClass('invalid')
                 hora.addClass('validate')
                 hora.focus()
-                formCompr.action    = './index.php?action=' + btn.text()
+                formCompr.action = './index.php?action=' + btn.attr('id')
                 formCompr.submit()
             }
             return false
@@ -216,7 +216,7 @@ function clickCadCompr(btn, idDesc, descr, cpfVend, cpfCli, data, hora) {
                     hora.removeClass('invalid')
                     hora.addClass('validate')
                     hora.focus()
-                    formCompr.action    = './index.php?action=' + btn.text()
+                    formCompr.action = './index.php?action=' + btn.attr('id')
                     formCompr.submit()
                 }
                 return false
@@ -243,7 +243,7 @@ function clickCadCompr(btn, idDesc, descr, cpfVend, cpfCli, data, hora) {
                         idDesc.removeClass('invalid')
                         idDesc.addClass('validate')
                         idDesc.focus()
-                        formCompr.action    = './index.php?action=' + btn.text()
+                        formCompr.action = './index.php?action=' + btn.attr('id')
                         formCompr.submit()
                     }
                     return false

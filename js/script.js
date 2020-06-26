@@ -51,11 +51,11 @@ var cadClienteTel2 = $("#cadClienteTel2");
 
 //variaveis formulario cadastro vendedor
 
-var cadVendCod = $("#cadVendCod");
+// var cadVendCod = $("#cadVendCod");
+var cadVendCPF = $("#cadVendCPF");
 var cadVendNome = $("#cadVendNome");
 var cadVendRG = $("#cadVendRG");
 // var cadVendEmis = $("#cadVendEmis");
-var cadVendCPF = $("#cadVendCPF");
 var cadVendCEP = $("#cadVendCEP");
 var cadVendEnd = $("#cadVendEnd");
 var cadVendNum = $("#cadVendNum");
